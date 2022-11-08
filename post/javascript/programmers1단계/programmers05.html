@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 1단계 풀이 다섯 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">자연수 뒤집어 배열로 만들기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요.<br />
+                예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+            </p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>N</th>
+                        <th>return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12345</td>
+                        <td>[5, 4, 3, 2, 1]</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>987</td>
+                        <td>24</td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    var answer = [];
+    
+    // n을 문자열로 변환하여 str에 대입
+    let str = n.toString();
+    // str을 배열로 만들어준 뒤 map(Number)을 통해 숫자로 만들어주고, 그것을 reverse메서드를 통해 배열을 뒤집어준다.
+    answer = [...str].map(Number).reverse();
+    
+    return answer;
+}
+</code></pre>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 1단계 풀이 첫 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">배열의 평균 구하기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>arr</th>
+                        <th>return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[1, 2, 3, 4]</td>
+                        <td>2.5</td>
+                    </tr>
+                    <tr>
+                        <td>[5, 5]</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(arr) {
+    var answer = 0;
+    
+    // arr 길이를 구하여 각 값들을 answer에 더해준다.
+    for(let i=0; i&lt;arr.length; i++){
+        answer += arr[i];
+    }
+    // 각 i의 값을 더하여준 answer을 arr의 총 갯 수 만큼 나누어준다.
+    return answer/arr.length;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function average(array){
+    // arr의 배열을 .reduce() 함수를 사용하여 각각 더해주고, arr 총 갯수만큼 나누어주셨다.
+    return array.reduce((a, b) => a + b) / array.length;
+}
+</code></pre>
+        </div>
+    </body>
+</html>

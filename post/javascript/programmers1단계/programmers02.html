@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 1단계 풀이 두 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">배열의 평균 구하기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">정수 num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하는 함수, solution을 완성해주세요.</p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>num</th>
+                        <th>return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>3</td>
+                        <td>"Odd"</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>"Odd"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(num) {
+    var answer = '';
+
+    // if문으로 num을 2로 나눌 시 나머지가 0일 때 answer 에 "Even"을 대입
+    if(num % 2 == 0){
+        answer = 'Even';
+    // 그게 아니면 answer 에 "Odd"를 대입한다.
+    } else {
+        answer = 'Odd';
+    }
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">// if문을 한줄로 표현하여 쓰셨다.
+function evenOrOdd(num) {
+    return num % 2 ? "Odd" : "Even";
+}
+</code></pre>
+        </div>
+    </body>
+</html>

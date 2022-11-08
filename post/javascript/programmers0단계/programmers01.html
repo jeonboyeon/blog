@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 0단계 풀이 첫 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">양꼬치</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                머쓱이네 양꼬치 가게는 10인분을 먹으면 음료수 하나를 서비스로 줍니다.<br />
+                양꼬치는 1인분에 12,000원, 음료수는 2,000원입니다. 정수 n과 k가 매개변수로 주어졌을 때,<br />
+                양꼬치 n인분과 음료수 k개를 먹었다면 총얼마를 지불해야 하는지 return 하도록 solution 함수를
+                완성해보세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 조건</h3>
+            <p class="t_desc2">
+                0 < n < 1,000<br />
+                n / 10 ≤ k < 1,000<br />
+                서비스로 받은 음료수는 모두 마십니다.
+            </p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>n</th>
+                        <th>k</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>124,000</td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td>6</td>
+                        <td>768,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n, k) {
+    var answer = 0;
+    
+    // n에서 10을 나눠 몫을 구하고, 그 몫에 음료수 값 2,000원을 곱하여 서비스 음료수 값을 구해준다.
+    let mDrink = Math.floor(n / 10) * 2000;
+    
+    // (n 인분 * 1인분의 가격) + (음료수 개수 * 음료수 하나의 가격 - 서비스로 받은 음료수 가격) 을 해주어 answer에 대입한다.
+    answer = (n * 12000) + (k * 2000 - mDrink);
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(n, k) {
+    return n*12000 + k*2000 - parseInt(n/10)*2000
+}
+</code></pre>
+        </div>
+    </body>
+</html>

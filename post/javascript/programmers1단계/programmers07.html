@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 1단계 풀이 일곱 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">문자열을 정수로 바꾸기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요.</p>
+
+            <h3 class="t_tit2">❍ 제한 조건</h3>
+            <p class="t_desc2">
+                s의 길이는 1 이상 5이하입니다.<br />
+                s의 맨앞에는 부호(+, -)가 올 수 있습니다.<br />
+                s는 부호와 숫자로만 이루어져있습니다.<br />
+                s는 "0"으로 시작하지 않습니다.
+            </p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <p class="t_box">
+                예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.<br />
+                str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
+            </p>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(s) {
+    // 
+    var answer = (parseInt(s));
+    
+    return answer;
+}
+</code></pre>
+            <br />
+            <div class="t_desc2">
+                살짝 설명이 필요할 것 같아 적어봅니다.<br />
+                parseInt() 메서드는 <em>문자열을 숫자로 변환할 수 있는 메서드</em> 중 하나이며,<br />
+                사용법은 parseInt(string, radix) (string은 숫자로 변환할 문자열, radix는 string 문자열을 읽을 진법을 뜻합니다) 입니다.<br />
+                parseInt() 메서드는 string을 정수로 변환한 값을 반환 해주며, 만약 문자열이 "-1" 일 시 -1 그대로 숫자로 변환하여 반환해 줍니다.
+            </div>
+
+            <br />
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function strToInt(str){
+    return str / 1
+}
+</code></pre>
+            <br />
+            <div class="t_desc2">
+                ... ... ... ... ... ... ... ...
+            </div>
+        </div>
+    </body>
+</html>

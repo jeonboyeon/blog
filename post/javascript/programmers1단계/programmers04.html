@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 1단계 풀이 네 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">자릿수 더하기</p>
+            <!-- //소제목 -->
+            <hr />
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.<br />예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>N</th>
+                        <th>return</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>987</td>
+                        <td>24</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n)
+{
+    var answer = 0;
+    
+    // n을 문자열로 변환하여 str에 대입
+    let str = n.toString();
+    // 문자열로 변환된 str을 한 글자씩 배열로 넣어준 뒤 map 메서드를 이용해 문자열을 숫자로 바꿔줬다.
+    str = [...str].map(Number);
+    
+    // for문을 이용하여 i를 0부터 str의 총 갯수 미만까지 증가시킨 후 str[i]값을 answer에 더하여 대입해줬다.
+    for(let i=0; i&lt;str.length; i++){
+        answer += str[i];
+    }
+
+    return answer;
+}
+</code></pre>
+        </div>
+    </body>
+</html>

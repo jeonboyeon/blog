@@ -1,0 +1,189 @@
+.document {
+    color: #444;
+    width: 1200px;
+    margin: 120px auto;
+}
+
+/* 티스토리용 문서 */
+code {
+    font-family: "SUIT" !important;
+}
+.document {
+    padding-bottom: 50px !important;
+}
+.document i {
+    color: #fff;
+    font-style: normal;
+    position: relative;
+    padding: 0 6px;
+    margin: 0 5px 0 0;
+}
+.document i::before {
+    content: "";
+    background-color: #4e82f1;
+    width: 100%;
+    height: 20px;
+    padding: 4px 0;
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+    border: 1px solid #333;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.document em {
+    font-style: normal;
+    position: relative;
+}
+.document em::before {
+    content: "";
+    background-color: #e8e8e8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    /* border-radius: 7px; */
+    z-index: -1;
+}
+.document hr {
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin: 30px 0;
+}
+.document .t_tit {
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.document .t_tit2 {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.document .t_tit3 {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+.document .t_desc {
+    font-size: 15px;
+    color: #444;
+    line-height: 2.2;
+    margin-bottom: 10px !important;
+    margin-left: 24px;
+}
+.document .t_desc2 {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 10px !important;
+    padding: 5px 20px !important;
+    border-left: 5px solid #444;
+}
+
+.document .t_desc3 {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    padding: 0 30px;
+}
+.document .t_box {
+    padding: 20px !important;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 3px;
+}
+
+.document .t_box2 {
+    border: 1px solid #dcdcdc;
+    box-shadow: inset 2px 2px 3px #e5e5e5;
+    padding: 20px !important;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+    color: #777;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.document .t_box2 .t_desc3 {
+    font-weight: 400;
+    color: #fff;
+}
+.document .t_table {
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th {
+    background-color: #f5f5f5;
+}
+.document .t_table tr th,
+.document .t_table tr td {
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #555;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+.document .t_iframe {
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+}
+.document .t_iframe iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.document .t_link a {
+    display: block;
+    width: 200px;
+    color: #fff;
+    background: linear-gradient(to right, #4e82f1, #5b23e4, #f92353);
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.15s;
+    text-decoration: none;
+}
+.document .t_link a::before {
+    height: 0%;
+    width: 2px;
+}
+.document .t_link a:hover {
+    box-shadow: 3px 3px 6px 0 rgba(255, 255, 255, 0.5), -3px -3px 6px 0 rgba(116, 125, 136, 0.5), inset -3px -3px 6px 0 rgba(255, 255, 255, 0.2), inset 3px 3px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.document .result {
+}
+
+.document .result summary {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #444;
+    padding: 7px 30px;
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.document .t_code {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
