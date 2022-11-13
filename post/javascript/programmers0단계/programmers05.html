@@ -13,51 +13,93 @@
     </head>
     <body>
         <div class="document">
-            <h2 class="t_tit">※ programmers 1단계 풀이 다섯 번째</h2>
+            <h2 class="t_tit">※ programmers 0단계 풀이 다섯 번째</h2>
             <!-- 제목 -->
-            <p class="t_desc">자연수 뒤집어 배열로 만들기</p>
+            <p class="t_desc">삼각형의 완성조건(1)</p>
             <!-- //소제목 -->
 
             <hr />
 
             <h3 class="t_tit2">❍ 문제 설명</h3>
             <p class="t_desc2">
-                자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요.<br />
-                예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+                선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.<br />
+                가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 합니다.<br />
+                삼각형의 세 변의 길이가 담긴 배열 sides이 매개변수로 주어집니다.<br />
+                세 변으로 삼각형을 만들 수 있다면 1, 만들 수 없다면 2를 return하도록 solution 함수를 완성해주세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 조건</h3>
+            <p class="t_desc2">
+                sides의 원소는 자연수입니다.<br />
+                sides의 길이는 3입니다.<br />
+                1 ≤ sides의 원소 ≤ 1,000
             </p>
 
             <h3 class="t_tit2">❍ 입출력 예</h3>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th>N</th>
-                        <th>return</th>
+                        <th>sides</th>
+                        <th>result</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12345</td>
-                        <td>[5, 4, 3, 2, 1]</td>
+                        <td>[1, 2, 3]</td>
+                        <td>2</td>
                     </tr>
-                    <!-- <tr>
-                        <td>987</td>
-                        <td>24</td>
-                    </tr> -->
+                    <tr>
+                        <td>[3, 6, 2]</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>[199, 72, 222]</td>
+                        <td>1</td>
+                    </tr>
                 </tbody>
             </table>
 
             <h3 class="t_tit2">❍ 나의 풀이</h3>
-            <pre><code class="language-js">function solution(n) {
-    var answer = [];
+            <pre><code class="language-js">function solution(sides) {
+    var answer = 0;
     
-    // n을 문자열로 변환하여 str에 대입
-    let str = n.toString();
-    // str을 배열로 만들어준 뒤 map(Number)을 통해 숫자로 만들어주고, 그것을 reverse메서드를 통해 배열을 뒤집어준다.
-    answer = [...str].map(Number).reverse();
+    // sides 를 계산하기 쉽게 오름차순으로 정렬해줍니다.
+    sides.sort(function(a, b)  {
+        return a - b;
+    });
     
+    // 깔쌈하게 한 번 확인 해준 뒤(안될 땐 정말 무섭습니다.)
+    console.log(sides);
+    
+    // for 문으로 i 를 sides 배열 총 갯수만큼 차차 차차차 증가시켜줍니다.
+    for(let i=0; i&lt;sides.length; i++){
+        // if 문을 사용해 sides[2]와 sides[0] + sides[1]의 값이 같을 때
+        if(sides[2] &gt;= sides[0] + sides[1]){
+            // answer 에 2를 대입
+            answer = 2;
+        // 그게 아니라면
+        } else {
+            // answer 에 1 을 대입해줍니다.
+            answer = 1;
+        }
+    }
     return answer;
 }
 </code></pre>
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(sides) {
+    // sides를 sort 메서드로 오름차순이 되게 해줍니다.
+    sides = sides.sort((a,b) => a-b)
+    // 바로 리턴을 사용하여 sides[0] + sides[1]가 sides[2] 보다 클 때 1을 리턴, 그게 아니면 2를 리턴해줍니다.
+    return sides[0]+sides[1] > sides[2] ? 1 : 2;
+}
+</code></pre>
+
+            <div class="t_box2">
+                감기 조심하세요.<br>
+                약은 곧 마약이고, 정신은 꿀 같은 겨울잠만 찾는 곰이 되어 버립니다.<br>
+                조금은 힘들었던 하루. 더 힘들 예정같은 내일.
+            </div>
         </div>
     </body>
 </html>
