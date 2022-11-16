@@ -13,51 +13,64 @@
     </head>
     <body>
         <div class="document">
-            <h2 class="t_tit">※ programmers 1단계 풀이 열 번째</h2>
+            <h2 class="t_tit">※ programmers 1단계 풀이 열한 번째</h2>
             <!-- 제목 -->
-            <p class="t_desc">정수 내림차순으로 배치하기</p>
+            <p class="t_desc">x만큼 간격이 있는 n개의 숫자</p>
             <!-- //소제목 -->
 
             <hr />
 
             <h3 class="t_tit2">❍ 문제 설명</h3>
             <p class="t_desc2">
-                함수 solution은 정수 n을 매개변수로 입력받습니다.<br />
-                n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요.<br />
-                예를들어 n이 118372면 873211을 리턴하면 됩니다.
+                함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를
+                리턴해야 합니다.<br />
+                다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.
             </p>
 
             <h3 class="t_tit2">❍ 제한 조건</h3>
-            <p class="t_desc2">n은 1이상 8000000000 이하인 자연수입니다.</p>
+            <p class="t_desc2">
+                x는 -10000000 이상, 10000000 이하인 정수입니다.<br />
+                n은 1000 이하인 자연수입니다.
+            </p>
 
             <h3 class="t_tit2">❍ 입출력 예</h3>
             <table class="t_table">
                 <thead>
                     <tr>
+                        <th>x</th>
                         <th>n</th>
-                        <th>return</th>
+                        <th>answer</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>118372</td>
-                        <td>873211</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>[2,4,6,8,10]</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>[4,8,12]</td>
+                    </tr>
+                    <tr>
+                        <td>-4</td>
+                        <td>2</td>
+                        <td>[-4, -8]</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3 class="t_tit2">❍ 나의 풀이</h3>
-            <pre><code class="language-js">function solution(n) {
-    var answer = '';
+            <pre><code class="language-js">function solution(x, n) {
+    var answer = [];
     
-    // n을 String메서드를 사용하여 문자열로 바꿔줍니다.
-    let str = String(n);
-    
-    // answer에 [...str]을 통해 각각 배열로 넣어주고, 그 문자열 배열을 각각 숫자로 바꾼 뒤 sort 메서드를 통해 반대로 뒤집어줍니다. 
-    answer = Number(([...str].map(Number).sort((a,b) => b - a)).join(''));
-    
-   
-    
+    // for문으로 i를 1부터 n의 갯수까지 증가시켜줍니다.
+    for (let i = 1; i&lt;=n; i++){
+
+        // answer에 x * 1를 하나씩 대입해줍니다.
+        answer.push(x*i);
+    }
     return answer;
 }
 </code></pre>
@@ -65,27 +78,14 @@
             <br />
 
             <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
-            <pre><code class="language-js">function solution(n) {
-    var answer = 0;
-
-
-    n += '';
-
-    n = n.split('').sort();
-
-    while(n.length>0) {
-        answer += n.pop();
-    }
-    return parseInt(answer);
+            <pre><code class="language-js">function solution(x, n) {
+    return Array(n).fill(x).map((v, i) => (i + 1) * v)
 }
-// 머리로는 이해가 조금씩 되지만 해석은 불가능합니다.
 </code></pre>
             <br />
             <div class="t_box2">
-                드디어 리엑트 과제를 시작하게 되었습니다.<br />
-                일단 제 조원에게 미리 사과를 드리고 싶네요.<br />
-                그래도 노력은 꼭 하겠습니다. 집 보내주세요.<br />
-                정말 집만큼은 못 버리겠습니다.
+                입병 너무 고통스럽습니다.<br />
+                말하기가 무섭네요.
             </div>
         </div>
     </body>

@@ -13,77 +13,67 @@
     </head>
     <body>
         <div class="document">
-            <h2 class="t_tit">※ programmers 1단계 풀이 여섯 번째</h2>
+            <h2 class="t_tit">※ programmers 0단계 풀이 여섯 번째</h2>
             <!-- 제목 -->
-            <p class="t_desc">문자열 내 p와 y의 개수</p>
+            <p class="t_desc">피자 나눠 먹기 (3)</p>
             <!-- //소제목 -->
 
             <hr />
 
             <h3 class="t_tit2">❍ 문제 설명</h3>
             <p class="t_desc2">
-                대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요.<br />
-                'p', 'y' 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.<br />
-                예를 들어 s가 "pPoooyY"면 true를 return하고 "Pyy"라면 false를 return합니다.
+                머쓱이네 피자가게는 피자를 두 조각에서 열 조각까지 원하는 조각 수로 잘라줍니다.<br />
+                피자 조각 수 slice와 피자를 먹는 사람의 수 n이 매개변수로 주어질 때,<br />
+                n명의 사람이 최소 한 조각 이상 피자를 먹으려면 최소 몇 판의 피자를 시켜야 하는지를 return 하도록
+                solution 함수를 완성해보세요.
             </p>
 
             <h3 class="t_tit2">❍ 입출력 예</h3>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th>s</th>
-                        <th>return</th>
+                        <th>slice</th>
+                        <th>n</th>
+                        <th>result</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>"pPoooyY"</td>
-                        <td>true</td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>2</td>
                     </tr>
                     <tr>
-                        <td>"Pyy"</td>
-                        <td>false</td>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>3</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3 class="t_tit2">❍ 나의 풀이</h3>
-            <pre><code class="language-js">function solution(s){
-var answer = true;
+            <pre><code class="language-js">function solution(slice, n) {
+    // Math.ceil 메서드를 사용하여 n/slice 값을 반올림 해준 값을 answer에 대입해줍니다.
+    var answer = Math.ceil(n / slice);
+    
+    return answer;
+}
+</code></pre>
 
-// s의 모든 영문을 소문자로 바꿔준다(같은 것을 찾을 때 확실히 하기위해서)
-let str = s.toLowerCase();
-// 소문자로 바꾼 s의 문자열들을 배열로 하나씩 나눠준다.
-str = [...str];
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(slice, n) {
+    let i = 1;
 
-// 먼저 변수 p,y 에 값을 0으로 선언해준다.
-let p = 0;
-let y = 0;
-
-// for문으로 i를 str의 총 배열 갯수만큼 증가시키고 str[i]의 값과 "p" 가 일치할 때마다 p를 증가, 같은 방법으로 y와도 일치할 시 y도 증가시켜준다.
-for(let i=0; i&lt;str.length; i++){
-    if(str[i] == 'p'){
-        p++;
-    } else if (str[i] == 'y'){
-        y++;
+    while(slice*i&lt;n){
+        i++
     }
-}
-
-// 그렇게 증가시켜준 값이 들어간 p 와 y 의 수가 같으면 answer에 true를 대입
-if(p == y){
-    answer = true;
-// 그게 아니면 answer에 false를 대입해준다.
-} else {
-    answer = false;
-}
-
-return answer;
+    return i;
 }
 </code></pre>
             <br />
             <div class="t_box">
-                프로그래머스 하나하나 풀어나갈 때마다 정말 뿌듯하네요 😄 <br />
-                7만 8천 등이니 6만 등을 향해 가보도록 하겠습니다.
+                요새 아침에 일어나기가 조금 힘듭니다.<br />
+                그래서 10분 더 자요.
             </div>
         </div>
     </body>
