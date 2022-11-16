@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 0단계 풀이 열 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">짝수는 싫어요</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                정수 n이 매개변수로 주어질 때, n 이하의 홀수가 오름차순으로 담긴 배열을 return하도록 solution 함수를
+                완성해주세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 사항</h3>
+            <p class="t_desc2">1 ≤ n ≤ 100</p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>n</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10</td>
+                        <td>[1, 3, 5, 7, 9]</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>[1, 3, 5, 7, 9, 11, 13, 15]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    let answer = [];
+
+    // for문으로 n만큼 i를 0부터 증가시켜줍니다.
+    for (let i = 0; i &lt;= n; i++) {
+        // if문을 통해 i % 2 가 1과 같다면
+        if (i % 2 === 1){
+            // 일치하는 i 값들만 answer에 넣어줍니다.
+            answer = [...answer, i];
+        }
+    }
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    var answer = [];
+
+    // for 문을 통해 i를 1부터 n 값과 같아질 때까지 i+=2 값씩 증가시켜주어 그 i 값들을 answer에 push 시켜주셨습니다.
+    for (let i = 1; i&lt;=n; i+=2) answer.push(i)
+
+    return answer;
+}
+</code></pre>
+            <br />
+            <div class="t_box2">
+                토요일에 프로필 사진을 찍으러 갑니다.<br />
+                저에게 서울은 해외여행과 마찬가지인데, 가는 길이 너무 힘겨울 것 같네요.<br />
+                그만큼 열심히 사진 보정 작가님에게 제 포토샵 수정을 맡기려 합니다.<br />
+                다른 사람이 되어 오겠습니다.
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 0단계 풀이 아홉 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">특정 문자 제거하기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                문자열 my_string과 문자 letter이 매개변수로 주어집니다.<br />
+                my_string에서 letter를 제거한 문자열을 return하도록 solution 함수를 완성해주세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 사항</h3>
+            <p class="t_desc2">
+                1 ≤ my_string의 길이 ≤ 100<br />
+                letter은 길이가 1인 영문자입니다.<br />
+                my_string과 letter은 알파벳 대소문자로 이루어져 있습니다.<br />
+                대문자와 소문자를 구분합니다.
+            </p>
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>my_string</th>
+                        <th>letter</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"abcdef"</td>
+                        <td>"f"</td>
+                        <td>"abcde"</td>
+                    </tr>
+                    <tr>
+                        <td>"BCBdbe"</td>
+                        <td>"B"</td>
+                        <td>"Cdbe"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(my_string, letter) {
+    // my_string을 배열로 변환 > filter 메서드를 통해 element 값들을 구한 후 el 값과 letter 값이
+    // 일치하지 않는 값들만 다시 반환하여 join으로 문자열로 다시 변환하였습니다.
+    var answer = [...my_string].filter(el => el !== letter).join('');
+    
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(my_string, letter) {
+    // split 메서드를 통해 letter 기준으로 문자열을 자르고, split 사용해서 배열로 변환된 값들을 join을 통해 다시 문자열로 바꿔주셨습니다.
+    const answer = my_string.split(letter).join('')
+    return answer;
+}
+</code></pre>
+            <br />
+            <div class="t_box2">
+                이번에는 좀 짧게 썼다 싶었지만, 언제나 더 짧은 식이 있네요.<br />
+                세상이 저를 억까하는 것 같지만 그래도 만족합니다.<br />
+                발전한 저를 스스로 칭찬해봅니다.
+            </div>
+        </div>
+    </body>
+</html>
