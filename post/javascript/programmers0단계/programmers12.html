@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 0단계 풀이 열한 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">순서쌍의 개수</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                순서쌍이란 두 개의 숫자를 순서를 정하여 짝지어 나타낸 쌍으로 (a, b)로 표기합니다.<br />
+                자연수 n이 매개변수로 주어질 때 두 숫자의 곱이 n인 자연수 순서쌍의 개수를 return하도록 solution 함수를
+                완성해주세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 사항</h3>
+            <p class="t_desc2">1 ≤ n ≤ 1,000,000</p>
+            <br />
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>n</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>20</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>9</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    let answer = 0;
+    
+    // Math.sqrt(n)으로 n의 제곱근을 구하고 그 수 전까지 i를 증가시켜줍니다.
+    for (let i = 1; i &lt; Math.sqrt(n); i++) {
+        // if 문으로 n % i 의 나머지가 0과 확실히 일치한다면 answer에 2를 계속 더하여 대입시켜줍니다.
+        if (n % i === 0) {
+            answer += 2;
+        } 
+    }
+    
+    // 다시 if 문으로 n % Math.sqrt(n)(n의 제곱근) 의 나머지가 0과 확실히 일치한다면 answer에 1을 계속 더하여 대입시켜줍니다.
+    if (n % Math.sqrt(n) === 0) {
+        answer += 1;
+    } 
+    
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">// 이 풀이... 많이 어렵다...
+return Array(n).fill(1).map((v,idx) => v + idx).filter(v => n % v === 0).length
+</code></pre>
+            <br />
+            <div class="t_box2">
+                저의 주말이 어디 갔는지 누구에게도 여쭤보지 못하겠습니다.<br />
+                저의 주말은 어디로 갔을까요.<br />
+                분명히 있던 것 같았는데 왜 벌써 월요일이 다가오고 있는지 모르겠습니다.<br />
+                오늘은 지금까지 나쵸 한 봉지만 먹었는데, 저녁은 어제 먹은 찜닭으로 채워야겠습니다.
+            </div>
+        </div>
+    </body>
+</html>

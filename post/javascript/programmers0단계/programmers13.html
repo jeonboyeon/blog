@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/common.css" />
+        <link rel="stylesheet" href="/assets/css/reset.css" />
+        <link rel="stylesheet" href="/assets/css/fonts.css" />
+    </head>
+    <body>
+        <div class="document">
+            <h2 class="t_tit">※ programmers 0단계 풀이 열세 번째</h2>
+            <!-- 제목 -->
+            <p class="t_desc">자릿수 더하기</p>
+            <!-- //소제목 -->
+
+            <hr />
+
+            <h3 class="t_tit2">❍ 문제 설명</h3>
+            <p class="t_desc2">
+                정수 n이 매개변수로 주어질 때 n의 각 자리 숫자의 합을 return하도록 solution 함수를 완성해주세요.
+            </p>
+
+            <h3 class="t_tit2">❍ 제한 사항</h3>
+            <p class="t_desc2">0 ≤ n ≤ 1,000,000</p>
+            <br />
+
+            <h3 class="t_tit2">❍ 입출력 예</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>n</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1234</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>930211</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">❍ 나의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    var answer = 0;
+    
+    // n을 문자열로 변경 후 arr에 대입
+    let arr = String(n);
+    // arr 값을 배열로 변경
+    arr = Array.from(arr);
+    // arr 값을 문자열에서 숫자로 변경
+    arr = arr.map(Number);
+    // reduce 메서드를 사용하여 각 배열의 값을 순차적으로 더해준다.
+    answer = arr.reduce((a, b) => a + b);
+    
+    console.log(arr);
+    
+    return answer;
+}
+</code></pre>
+
+            <h3 class="t_tit2">❍ 다른 사람의 풀이</h3>
+            <pre><code class="language-js">function solution(n) {
+    var answer = 0;
+
+    // j에 n을 대입
+    let j = n
+    //  i를 0부터 j 전까지만 증가시켜준다. 
+    for(let i = 0; i &lt; j; i++){
+        // answer에 n 을 10으로 나눴을 때의 값 대입
+        answer+=n%10;
+        // n에 n 과 10 을 나눴을 때의 소숫점이 없는 몫의 값을 대입해준다.
+        n = Math.floor(n/10);
+    }
+    return answer;
+}
+</code></pre>
+            <br />
+            <div class="t_box2">
+                주말을 다시 돌려주실 분이 계실까요.<br />
+                조금만…. 조금만 더 집에 있고 싶네요. 평생은 말고요.
+            </div>
+        </div>
+    </body>
+</html>
